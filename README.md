@@ -10,8 +10,9 @@
 - Request 200 KB for P2 using best-fit
 `allocator> RQ P2 200000 B`
 - Request 300 KB for P3 using worst-fit
+`allocator> RQ P3 300000 W`
 - Release block of memory (P2)
-`allocator > RL P2`
+`allocator> RL P2`
 - Request 150 KB for P4 using worst-fit
 `allocator> RQ P4 150000 W`
 - Compact the memory to combine free spaces
