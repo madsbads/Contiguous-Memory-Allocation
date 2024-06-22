@@ -1,0 +1,52 @@
+allocator>
+STAT
+Memory status:
+Addresses [0:1048575] Unused
+RQ P1 100000 F
+Allocated 100000 bytes to process P1.
+RQ P2 200000 B
+Allocated 200000 bytes to process P2.
+RQ P3 300000 W
+Allocated 300000 bytes to process P3.
+STAT
+Memory status:
+Addresses [0:99999] Process P1
+Addresses [100000:299999] Process P2
+Addresses [300000:599999] Process P3
+Addresses [600000:1048575] Unused
+RL P2
+Released memory of process P2.
+STAT
+Memory status:
+Addresses [0:99999] Process P1
+Addresses [300000:599999] Process P3
+Addresses [100000:299999] Unused
+Addresses [600000:1048575] Unused
+RQ P4 150000 W
+Allocated 150000 bytes to process P4.
+STAT
+Memory status:
+Addresses [0:99999] Process P1
+Addresses [300000:599999] Process P3
+Addresses [600000:749999] Process P4
+Addresses [100000:299999] Unused
+Addresses [750000:1048575] Unused
+C
+Memory compacted.
+STAT
+Memory status:
+Addresses [0:99999] Process P1
+Addresses [100000:399999] Process P3
+Addresses [400000:549999] Process P4
+Addresses [550000:1048575] Unused
+RQ P5 400000 F
+Allocated 400000 bytes to process P5.
+STAT
+Memory status:
+Addresses [0:99999] Process P1
+Addresses [100000:399999] Process P3
+Addresses [400000:549999] Process P4
+Addresses [550000:949999] Process P5
+Addresses [950000:1048575] Unused
+X
+Exiting.
